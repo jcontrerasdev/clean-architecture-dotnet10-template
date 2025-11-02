@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/1.Presentation/">
+    <Project Path="src/Nanabills.Api/Nanabills.Api.csproj" />
+    <Project Path="src/Nanabills.Contracts/Nanabills.Contracts.csproj" Id="67cc22d5-ca81-4115-bca7-519ef16471f6" />
+  </Folder>
+  <Folder Name="/src/2.Infraestructure/" />
+  <Folder Name="/src/3.Application/" />
+  <Folder Name="/src/4.Domain/" />
+  <Folder Name="/test/" />
+</Solution>

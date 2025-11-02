@@ -1,0 +1,6 @@
+@Nanabills.Api_HostAddress = http://localhost:5109
+
+GET {{Nanabills.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
