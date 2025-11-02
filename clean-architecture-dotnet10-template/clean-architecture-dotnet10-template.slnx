@@ -4,8 +4,14 @@
     <Project Path="src/Nanabills.Api/Nanabills.Api.csproj" />
     <Project Path="src/Nanabills.Contracts/Nanabills.Contracts.csproj" Id="67cc22d5-ca81-4115-bca7-519ef16471f6" />
   </Folder>
-  <Folder Name="/src/2.Infraestructure/" />
-  <Folder Name="/src/3.Application/" />
-  <Folder Name="/src/4.Domain/" />
+  <Folder Name="/src/2.Infrastructure/">
+    <Project Path="src/Nanabills.Infrastructure/Nanabills.Infrastructure.csproj" Id="fb5c97f4-4cb9-458e-8cf8-fdcceffa66f4" />
+  </Folder>
+  <Folder Name="/src/3.Application/">
+    <Project Path="Nanabills.Application/Nanabills.Application.csproj" Id="2a10aaaf-0ffa-40fe-971f-b23fd0a56bde" />
+  </Folder>
+  <Folder Name="/src/4.Domain/">
+    <Project Path="Nanabills.Domain/Nanabills.Domain.csproj" Id="1b5506d0-be87-4040-be14-dc00d0399a70" />
+  </Folder>
   <Folder Name="/test/" />
 </Solution>
