@@ -1,7 +1,13 @@
-﻿namespace Nanabills.Domain.Transactions;
+﻿using Ardalis.SmartEnum;
 
-public enum TransactionType
+namespace Nanabills.Domain.Transactions;
+
+public class TransactionType : SmartEnum<TransactionType>
 {
-    Income,
-    Expense
+    public static readonly TransactionType Income = new(nameof(Income), 0);
+    public static readonly TransactionType Expense = new(nameof(Expense), 1);
+
+    public TransactionType(string name, int value) : base(name, value)
+    {
+    }
 }

@@ -50,22 +50,22 @@ public class TransactionsController(ISender _mediator) : ApiController
 
     private static TransactionType ToDto(DomainTransactionType transactionType)
     {
-        return transactionType switch
+        return transactionType.Name switch
         {
-            DomainTransactionType.Income => TransactionType.Income,
-            DomainTransactionType.Expense => TransactionType.Expense,
+            nameof(DomainTransactionType.Income) => TransactionType.Income,
+            nameof(DomainTransactionType.Expense) => TransactionType.Expense,
             _ => throw new InvalidOperationException(),
         };
     }
 
     private static TransactionStatusType ToDto(DomainTransactionStatusType transactionStatusType)
     {
-        return transactionStatusType switch
+        return transactionStatusType.Name switch
         {
-            DomainTransactionStatusType.Cancelled => TransactionStatusType.Cancelled,
-            DomainTransactionStatusType.Pending => TransactionStatusType.Pending,
-            DomainTransactionStatusType.Completed => TransactionStatusType.Completed,
-            DomainTransactionStatusType.Failed => TransactionStatusType.Failed,
+            nameof(DomainTransactionStatusType.Cancelled) => TransactionStatusType.Cancelled,
+            nameof(DomainTransactionStatusType.Pending) => TransactionStatusType.Pending,
+            nameof(DomainTransactionStatusType.Completed) => TransactionStatusType.Completed,
+            nameof(DomainTransactionStatusType.Failed) => TransactionStatusType.Failed,
             _ => throw new InvalidOperationException(),
         };
     }
