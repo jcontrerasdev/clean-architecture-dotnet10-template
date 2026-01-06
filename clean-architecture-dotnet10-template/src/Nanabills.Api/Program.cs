@@ -1,4 +1,5 @@
 using Nanabills.Application;
+using Nanabills.Infrastructure;
 using Nanabills.Contracts.Constants;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ string mediatorLicenseKey = builder.Configuration.GetValue<string>("MediatorR:Li
 // Add services to the container.
 builder.Services
     .AddApplication(mediatorLicenseKey)
+    .AddInfrastructure(builder.Configuration)
     .AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
