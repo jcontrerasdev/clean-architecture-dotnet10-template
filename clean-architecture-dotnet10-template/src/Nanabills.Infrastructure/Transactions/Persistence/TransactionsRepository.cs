@@ -9,6 +9,11 @@ public class TransactionsRepository(NanabillsDbContext dbContext) : ITransaction
 {
     private readonly NanabillsDbContext _dbContext = dbContext;
 
+    public async Task AddTransactionAsync(Transaction transaction)
+    {
+        await _dbContext.Transactions.AddAsync(transaction);
+    }
+
     public async Task<Transaction?> GetByIdAsync(Guid transactionId)
     {
         return await _dbContext.Transactions.FindAsync(transactionId);

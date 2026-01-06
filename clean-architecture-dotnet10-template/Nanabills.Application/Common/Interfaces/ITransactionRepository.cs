@@ -6,4 +6,5 @@ public interface ITransactionRepository
 {
     Task<Transaction?> GetByIdAsync(Guid transactionId);
     Task<List<Transaction>> ListByUserIdAsync(Guid userId);
+    Task AddTransactionAsync(Transaction transaction);
 }

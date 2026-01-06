@@ -12,6 +12,10 @@ public class TransactionConfigurations : IEntityTypeConfiguration<Transaction>
 
         builder.HasKey(g => g.Id);
 
+        builder.HasIndex(g => g.UserId);
+
+        builder.HasIndex(g => g.CreateAt);
+
         builder.Property(g => g.Id)
             .IsRequired()
             .ValueGeneratedNever();
@@ -19,9 +23,11 @@ public class TransactionConfigurations : IEntityTypeConfiguration<Transaction>
         builder.Property(g => g.UserId)
             .IsRequired();
 
-        builder.Property(g => g.Type)
+        builder.Property(s => s.Type)
             .IsRequired()
-            .HasConversion<int>();
+            .HasConversion(
+                type => type.Name,
+                name => TransactionType.FromName(name));
 
         builder.Property(g => g.Amount)
             .IsRequired()
@@ -31,12 +37,13 @@ public class TransactionConfigurations : IEntityTypeConfiguration<Transaction>
             .IsRequired()
             .HasMaxLength(250);
 
-        builder.Property(g => g.Status)
+        builder.Property(s => s.Status)
             .IsRequired()
-            .HasConversion<int>();
+            .HasConversion(
+                status => status.Name,
+                name => TransactionStatusType.FromName(name));
 
         builder.Property(g => g.CreateAt)
-            .IsRequired()
-            .HasDefaultValueSql("GETUTCDATE()");
+            .IsRequired();
     }
 }
